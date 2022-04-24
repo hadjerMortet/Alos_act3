@@ -47,7 +47,7 @@ route.get("/:id", (req, res) => {
 //  POST DATA TO RECIPES API AND CHECK WITH VALIDATEE MIDDLEWARE
 route.post("/", validatee, (req, res) => {
   const id = Restaurants[Restaurants.length - 1].id + 1;
-  Countries.push({ id, ...req.body });
+  Restaurants.push({ id, ...req.body });
   // throw Error("somthing faile"); //throw error to test error handling
   res.status(200).send("added succefuly");
 });
