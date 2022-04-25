@@ -1,7 +1,7 @@
 const express = require("express");
 const joi = require("joi");
 const route = express.Router();
-const Restaurants = require("../Restaurants.json");
+const Restaurants = require("../../Restaurants.json");
 const validatee = require("../routes/middlewares/validate");
 
 route.get("/", (req, res) => {
