@@ -14,7 +14,7 @@ route.get("/:id", (req, res) => {
 route.post("/", validatee, (req, res) => {
   const id = Restaurants[Restaurants.length - 1].id + 1;
   Restaurants.push({ id, ...req.body });
-  // throw Error("somthing faile"); //throw error to test error handling
+  //throw error to test error handling
   res.status(200).send("added succefuly");
 });
 route.put("/:id", validatee, (req, res) => {
