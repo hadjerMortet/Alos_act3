@@ -10,7 +10,7 @@ const error = require("./routes/middlewares/error");
 import AuthController from './routes/v2/Controllers/AuthController'
 import verifyToken from './routes/middleware/verifyToken'
 
-//  Catch Errors on start
+//  Catch Errors in the start
 process.on("uncaughtException", function (err) {
   console.log(err.message);
 });
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 // ROUTES
 app.use("/api/v1/Restaurants", route1);
 
-app.use('/api/auth/', AuthController) // only apply authentification to version 2
+app.use('/api/auth/', AuthController) //apply authentication only to version 2
 
 app.use(verifyToken) // middleware to verify token
 
