@@ -16,7 +16,7 @@ export default function verifyToken(req, res, next) {
                 message: 'Failed to authenticate token.'
             });
 
-        // if all goes well, save to request use in other routes 
+        // If everything is good, save to request use in other routes 
         req.user_id = decoded.id;
         next();
     });
