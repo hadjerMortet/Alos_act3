@@ -14,7 +14,7 @@ export default {
 
         return user
     },
-    get_by(param, value) { //gets the user by the name of the parameter and it's value
+    get_by(param, value) {    //gets the user by the name of the parameter and it's value
         const user = users.find(user => user[param] == value)
 
         return user
@@ -35,7 +35,7 @@ export default {
         return new_user
     },
 
-    //delete user
+    //DELETE USER 
 
     delete(id) {
         let index = users.findIndex(user => user.id == id)
