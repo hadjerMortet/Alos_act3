@@ -1,14 +1,14 @@
 const express = require("express");
 const joi = require("joi");
 const route = express.Router();
-const Restaurants = require("../Restaurants.json");
+const Restaurants = require("../../Restaurants.json");
 const validatee = require("../routes/middlewares/validate");
 const UserController = require ("./Controllers/UserController")
 const ReviewController = require ("./Controllers/ReviewController")
 
 
-//  NEW FEATURE IN V2 :
-// reviews
+//  NEW FEATURE reviews IN V2 :
+
 
 router.get('/Restaurants/:id/reviews',
     ReviewController.get)
@@ -21,8 +21,8 @@ router.delete('reviews/:id',
 
 
 
-//  NEW FEATURE IN V2 :
-// users
+//  NEW FEATURE users IN V2 :
+
 
 route.get('/users',
     UserController.get_all)
@@ -33,7 +33,8 @@ route.get('/users/:id',
 route.get('/users/:id/reviews',
     UserController.get_reviews)
 
-//  ############################
+
+
 route.get("/", (req, res) => {
   res.json(Restaurants);
 });
@@ -48,7 +49,7 @@ route.get("/:id", (req, res) => {
 route.post("/", validatee, (req, res) => {
   const id = Restaurants[Restaurants.length - 1].id + 1;
   Restaurants.push({ id, ...req.body });
-  // throw Error("somthing faile"); //throw error to test error handling
+ 
   res.status(200).send("added succefuly");
 });
 
