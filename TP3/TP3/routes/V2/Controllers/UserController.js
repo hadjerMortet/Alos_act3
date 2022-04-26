@@ -35,9 +35,9 @@ export default {
         res.status(200).json(new_users)
     },
     delete_all_review: (req, res) => {
-        const user_id = req.params.id
+        const userId = req.params.id
 
-        const new_reviews = User.delete_reviews(user_id)
+        const new_reviews = User.delete_reviews(userId)
 
         res.status(200).json(new_reviews)
 
