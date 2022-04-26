@@ -10,7 +10,7 @@ export default {
     },
 
     get(id) {
-        const user = users.find(user => user.id == id)
+        const user = users.find(user => userId == id)
 
         return user
     },
@@ -38,7 +38,7 @@ export default {
     //DELETE USER 
 
     delete(id) {
-        let index = users.findIndex(user => user.id == id)
+        let index = users.findIndex(user => userId == id)
 
         users.splice(index, 1)
         const new_data = JSON.stringify(users)
@@ -48,12 +48,12 @@ export default {
         return users
     },
 
-    get_reviews(user_id) {
-        return reviews.filter(review => review.user_id == user_id)
+    get_reviews(userId) {
+        return reviews.filter(review => review.userId == userId)
     },
 
-    delete_reviews(user_id) {
-        let new_reviews = reviews.filter(review => review.user_id != user_id)
+    delete_reviews(userId) {
+        let new_reviews = reviews.filter(review => review.userId != userId)
 
         const new_data = JSON.stringify(new_reviews)
 
