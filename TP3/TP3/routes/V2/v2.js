@@ -45,7 +45,7 @@ route.get("/:id", (req, res) => {
   index ? res.status(200).json(index) : res.status(404).send("NOT FOUND");
 });
 
-//  POST DATA TO RECIPES API AND CHECK WITH VALIDATEE MIDDLEWARE
+//  POST DATA 
 route.post("/", validatee, (req, res) => {
   const id = Restaurants[Restaurants.length - 1].id + 1;
   Restaurants.push({ id, ...req.body });
